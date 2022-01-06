@@ -14,18 +14,11 @@ struct SearchBarView: View {
     
     var body: some View {
         
-        TextField("Insert text", text: $newText)
+        TextField("What do you need to do?", text: $newText)
             .font(.title)
-            .padding(.leading)
-            .padding(.vertical, 20)
-            .accentColor(.green)
+            .padding()
             .foregroundColor(.black.opacity(0.6))
-            .background(
-                Rectangle()
-                    .fill(LinearGradient(colors: [.yellow, .green], startPoint: .leading, endPoint: .trailing))
-                    .shadow(color: .green.opacity(0.3), radius: 1, x: 5, y: 5)
-                    
-            )
+            .textFieldStyle(.roundedBorder)
             .onSubmit {
                 guard !newText.isEmpty else { return }
                 container.addNote(text: newText)

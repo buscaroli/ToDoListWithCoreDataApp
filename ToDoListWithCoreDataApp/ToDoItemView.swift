@@ -9,37 +9,29 @@ import SwiftUI
 
 struct ToDoItemView: View {
     @State var note: ToDoEntity
+    @ObservedObject var model: DBViewModel
     
     var body: some View {
-        HStack (spacing: -10){
-            ZStack {
-                Rectangle()
-                    .fill(.yellow)
-                    .shadow(color: .yellow.opacity(0.4), radius: 1, x: 5, y: 5)
-                    .frame(height: 80)
-                    .padding(.leading, 10)
+        HStack {
+            Text(note.text ?? "Forgotten something?")
+                .font(.headline)
+                .foregroundColor(.black.opacity(0.7))
+                .padding()
+//                .lineLimit(3)
+ 
+            Spacer()
+                      
+            Image(systemName: note.completed ? "checkmark" : "xmark")
+                .font(.largeTitle)
+                .foregroundColor(note.completed ? .green : .red)
+                .padding()
                 
-                Text(note.text ?? "Forgotten something?")
-                    .font(.headline)
-                    .foregroundColor(.black.opacity(0.7))
-                    .padding()
-                    .lineLimit(3)
-                    
-            }
-            
-            ZStack {
-                Rectangle()
-                    .fill(note.completed ? Color.green : Color.red)
-                    .shadow(color: note.completed ? Color.green.opacity(0.4) : Color.red.opacity(0.4), radius: 1, x: 5, y: 5)
-                    .frame(width: 80, height: 80, alignment: .center)
-                    .padding()
-                   
-                
-                Image(systemName: note.completed ? "checkmark" : "xmark")
-                    .font(.largeTitle)
-                    .padding()
-                    
-            }
+   
+        }
+        .contentShape(Rectangle())
+        .onTapGesture {
+//            print(model.noteList)
+            model.updateCompletion(entity: note)
         }
         
     }

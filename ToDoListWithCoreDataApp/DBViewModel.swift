@@ -53,8 +53,10 @@ class DBViewModel: ObservableObject {
         
     }
     
-    func toggleCompleted(entity: ToDoEntity) {
-        entity.completed.toggle()
+    func updateCompletion(entity: ToDoEntity) {
+        let currentCompletion = entity.completed
+        let newCompletion = !currentCompletion
+        entity.completed = newCompletion
         saveData()
     }
     
