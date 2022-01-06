@@ -30,15 +30,19 @@ struct ToDoItemView: View {
         }
         .contentShape(Rectangle())
         .onTapGesture {
-//            print(model.noteList)
+
             model.updateCompletion(entity: note)
         }
         
     }
 }
 
+
+
 //struct ToDoItemView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        ToDoItemView(note: [])
+//        ToDoItemView(note: model.noteList[0], model: DBViewModel())
+//            
 //    }
+//    
 //}

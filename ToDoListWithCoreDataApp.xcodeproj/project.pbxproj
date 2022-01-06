@@ -63,9 +63,9 @@
 				23B3C91F278724EB0076BD05 /* ContentView.swift */,
 				23B3C92E27874B770076BD05 /* ToDoItemView.swift */,
 				23B3C93227876E620076BD05 /* SearchBarView.swift */,
-				23B3C921278724EB0076BD05 /* Assets.xcassets */,
 				23B3C930278761EF0076BD05 /* DBViewModel.swift */,
 				23B3C92B27874A500076BD05 /* ToDoCoreDataModel.xcdatamodeld */,
+				23B3C921278724EB0076BD05 /* Assets.xcassets */,
 				23B3C923278724EB0076BD05 /* Preview Content */,
 			);
 			path = ToDoListWithCoreDataApp;
