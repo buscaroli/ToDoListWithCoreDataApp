@@ -13,6 +13,8 @@
 		23B3C925278724EB0076BD05 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23B3C924278724EB0076BD05 /* Preview Assets.xcassets */; };
 		23B3C92D27874A500076BD05 /* ToDoCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 23B3C92B27874A500076BD05 /* ToDoCoreDataModel.xcdatamodeld */; };
 		23B3C92F27874B770076BD05 /* ToDoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B3C92E27874B770076BD05 /* ToDoItemView.swift */; };
+		23B3C931278761EF0076BD05 /* DBViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B3C930278761EF0076BD05 /* DBViewModel.swift */; };
+		23B3C93327876E620076BD05 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B3C93227876E620076BD05 /* SearchBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		23B3C924278724EB0076BD05 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		23B3C92C27874A500076BD05 /* ToDoCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDoCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		23B3C92E27874B770076BD05 /* ToDoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemView.swift; sourceTree = "<group>"; };
+		23B3C930278761EF0076BD05 /* DBViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBViewModel.swift; sourceTree = "<group>"; };
+		23B3C93227876E620076BD05 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +62,9 @@
 				23B3C91D278724EB0076BD05 /* ToDoListWithCoreDataAppApp.swift */,
 				23B3C91F278724EB0076BD05 /* ContentView.swift */,
 				23B3C92E27874B770076BD05 /* ToDoItemView.swift */,
+				23B3C93227876E620076BD05 /* SearchBarView.swift */,
 				23B3C921278724EB0076BD05 /* Assets.xcassets */,
+				23B3C930278761EF0076BD05 /* DBViewModel.swift */,
 				23B3C92B27874A500076BD05 /* ToDoCoreDataModel.xcdatamodeld */,
 				23B3C923278724EB0076BD05 /* Preview Content */,
 			);
@@ -144,8 +150,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				23B3C92D27874A500076BD05 /* ToDoCoreDataModel.xcdatamodeld in Sources */,
+				23B3C931278761EF0076BD05 /* DBViewModel.swift in Sources */,
 				23B3C92F27874B770076BD05 /* ToDoItemView.swift in Sources */,
 				23B3C920278724EB0076BD05 /* ContentView.swift in Sources */,
+				23B3C93327876E620076BD05 /* SearchBarView.swift in Sources */,
 				23B3C91E278724EB0076BD05 /* ToDoListWithCoreDataAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

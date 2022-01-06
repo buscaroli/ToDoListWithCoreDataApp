@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @StateObject var vm = DBViewModel()
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -20,13 +22,18 @@ struct ContentView: View {
                         .frame(height: 0)
                         .background(LinearGradient(colors: [Color(red: 245/255, green: 221/255, blue: 115/255), Color(red: 94/255, green: 214/255, blue: 34/255)], startPoint: .topLeading, endPoint: .bottomTrailing))
                     
-                    ScrollView {
-                        ToDoItemView(text: "Hi there, first To-Do here", itemColor: Color.yellow, completed: true)
-                        ToDoItemView(text: "Second", itemColor: Color.green, completed: true)
-                        ToDoItemView(text: "And third", itemColor: Color.pink, completed: false)
-                        ToDoItemView(text: "That's another one for you", itemColor: Color.green, completed: true)
-                        ToDoItemView(text: "Walk the dog", itemColor: Color.yellow, completed: false)
+                    SearchBarView(container: vm)
+                        .padding()
+                        
+                    
+                    List {
+                        ForEach(vm.noteList) { note in
+                            ToDoItemView(note: note)
+                        }
+                        .onDelete(perform: vm.deleteNote)
+                        .listStyle(.plain)
                     }
+                    
                 }
                 
             }
