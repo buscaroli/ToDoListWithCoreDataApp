@@ -53,6 +53,11 @@ class DBViewModel: ObservableObject {
         
     }
     
+    func toggleCompleted(entity: ToDoEntity) {
+        entity.completed.toggle()
+        saveData()
+    }
+    
     func saveData() {
         do {
             try container.viewContext.save()

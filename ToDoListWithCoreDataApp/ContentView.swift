@@ -29,6 +29,10 @@ struct ContentView: View {
                     List {
                         ForEach(vm.noteList) { note in
                             ToDoItemView(note: note)
+                                .onTapGesture {
+                                    vm.toggleCompleted(entity: note)
+                                }
+                                
                         }
                         .onDelete(perform: vm.deleteNote)
                         .listStyle(.plain)

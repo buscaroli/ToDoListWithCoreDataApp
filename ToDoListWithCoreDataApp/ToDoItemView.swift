@@ -38,8 +38,10 @@ struct ToDoItemView: View {
                 Image(systemName: note.completed ? "checkmark" : "xmark")
                     .font(.largeTitle)
                     .padding()
+                    
             }
         }
+        
     }
 }
 
