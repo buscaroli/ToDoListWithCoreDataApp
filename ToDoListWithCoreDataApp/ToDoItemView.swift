@@ -15,7 +15,7 @@ struct ToDoItemView: View {
         HStack {
             Text(note.text ?? "Forgotten something?")
                 .font(.headline)
-                .foregroundColor(.black.opacity(0.7))
+                .foregroundColor(.primary.opacity(0.7))
                 .padding()
 //                .lineLimit(3)
  
