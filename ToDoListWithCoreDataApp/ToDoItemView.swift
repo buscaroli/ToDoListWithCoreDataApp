@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ToDoItemView: View {
     @State var note: ToDoEntity
-    @ObservedObject var model: DBViewModel
+    @EnvironmentObject var vm: DBViewModel
     
     var body: some View {
         HStack {
@@ -31,7 +31,7 @@ struct ToDoItemView: View {
         .contentShape(Rectangle())
         .onTapGesture {
 
-            model.updateCompletion(entity: note)
+            vm.updateCompletion(entity: note)
         }
         
     }
@@ -41,8 +41,10 @@ struct ToDoItemView: View {
 
 //struct ToDoItemView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        ToDoItemView(note: model.noteList[0], model: DBViewModel())
-//            
+//        let context = ToDoEntity.context
+//        
+//        ToDoItemView()
+//            .environment(\.managedObjectContext, context)
 //    }
 //    
 //}

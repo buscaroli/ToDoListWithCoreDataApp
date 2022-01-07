@@ -9,17 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @StateObject var vm = DBViewModel()
+    @EnvironmentObject var vm: DBViewModel
     
     var body: some View {
         NavigationView {
             VStack {
-                SearchBarView(container: vm)
+                SearchBarView()
                     .padding()
                     
                 List {
                     ForEach(vm.noteList) { note in
-                        ToDoItemView(note: note, model: vm)
+                        ToDoItemView(note: note)
                     }
                     .onDelete(perform: vm.deleteNote)
                 }
@@ -33,5 +33,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
             ContentView()
+            .environmentObject(DBViewModel())
         }
 }

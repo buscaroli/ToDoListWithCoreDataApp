@@ -10,7 +10,7 @@ import SwiftUI
 struct SearchBarView: View {
     
     @State private var newText: String = ""
-    @ObservedObject var container: DBViewModel
+    @EnvironmentObject var vm: DBViewModel
     
     var body: some View {
         
@@ -21,7 +21,7 @@ struct SearchBarView: View {
             .textFieldStyle(.roundedBorder)
             .onSubmit {
                 guard !newText.isEmpty else { return }
-                container.addNote(text: newText)
+                vm.addNote(text: newText)
                 newText = ""
             }
     }
@@ -30,6 +30,7 @@ struct SearchBarView: View {
 
 struct SearchBarView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBarView(container: DBViewModel() )
+        SearchBarView()
+            .environmentObject(DBViewModel())
     }
 }

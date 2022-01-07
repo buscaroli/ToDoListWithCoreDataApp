@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct ToDoListWithCoreDataAppApp: App {
+    
+    @StateObject var vm = DBViewModel()
+    
     var body: some Scene {
         WindowGroup {
                 ContentView()
+                .environmentObject(vm)
         }
+        
     }
 }
